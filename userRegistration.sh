@@ -1,22 +1,19 @@
 #! /bin/bash
 
 #Author : Akash Suchak
-#As a user need to enter a valid Last Name
+#As a user need to enter a valid Email
 
 shopt -s extglob
 
-echo "Note : 1) Name Start With capital Letter "
-echo "       2) Minimum 3 Characters required "
-
 #Regular Expression
-regEx="^[[:upper:]][[:alpha:]]{2,56}$"
+regEx="^[a-zA-Z0-9+_.-]+@[a-zA-Z.]+\.+[a-zA-Z]{2,4}$"
 
 #User-Input
-read -p "Enter Last Name : " lastName
+read -p "Enter Valid Email-Id : " email
 
-#Checking LastName is Valid or Not
-if [[ $lastName =~ $regEx ]]; then
-        echo "$lastName is Valid "
+#Checking Email is Valid or Not
+if [[ $email =~ $regEx ]]; then
+        echo "$email is Valid "
 else
-        echo "Wrong Input!! Try Again"
+        echo "Invalid Email-Id !! Try Again"
 fi
