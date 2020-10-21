@@ -1,23 +1,25 @@
 #! /bin/bash
 
 #Author : Akash Suchak
-#As a user need to follow pre-defined mobile format
+#As a user need to follow pre-defined Password Rules
 
 shopt -s extglob
 
 #Regular Expression
-regEx="[0-9]{2,5}[[:space:]][[:digit:]]{10}$"
+regEx="[0-9a-zA-z#*-_.@ ]{8,}$"
 
 #Display example for user
-echo "Note : Enter Mobile Number in valid Format"
-echo "Example : 91 9876543210"
+echo "Note : Enter Password properly"
+echo "-----------------------------"
+echo "Rule:1 - Minimum 8 Characters"
+echo "============================="
 
 #User-Input
-read -p "Enter Valid Mobile Number : " mobile
+read -p "Enter Valid Password : " pwd
 
-#Checking Mobile Number is Valid or Not
-if [[ $mobile =~ $regEx ]]; then
-        echo "$mobile is Valid "
+#Checking Password is Valid or Not
+if [[ $pwd =~ $regEx ]]; then
+        echo "Password Entered Correctly"
 else
-        echo "Invalid Mobile Number !! Try Again"
+        echo "Invalid Passord !! Try Again"
 fi
