@@ -1,19 +1,23 @@
 #! /bin/bash
 
 #Author : Akash Suchak
-#As a user need to enter a valid Email
+#As a user need to follow pre-defined mobile format
 
 shopt -s extglob
 
 #Regular Expression
-regEx="^[a-zA-Z0-9+_.-]+@[a-zA-Z.]+\.+[a-zA-Z]{2,4}$"
+regEx="[0-9]{2,5}[[:space:]][[:digit:]]{10}$"
+
+#Display example for user
+echo "Note : Enter Mobile Number in valid Format"
+echo "Example : 91 9876543210"
 
 #User-Input
-read -p "Enter Valid Email-Id : " email
+read -p "Enter Valid Mobile Number : " mobile
 
-#Checking Email is Valid or Not
-if [[ $email =~ $regEx ]]; then
-        echo "$email is Valid "
+#Checking Mobile Number is Valid or Not
+if [[ $mobile =~ $regEx ]]; then
+        echo "$mobile is Valid "
 else
-        echo "Invalid Email-Id !! Try Again"
+        echo "Invalid Mobile Number !! Try Again"
 fi
