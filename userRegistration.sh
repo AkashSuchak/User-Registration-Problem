@@ -16,6 +16,16 @@ echo "============================="
 
 #User-Input
 read -p "Enter Your Password : " pass
+read -p "Enter Email-Id : " email
+emailRegEx="^[a-z0-9!#\$%&'*+/=?^_\`{|}~-]+(\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z0-9]([a-z0-9-]*[a-z0-9])?\$"
+
+#Checking Email ID is vaid or not
+if [[ $email =~ $emailRegEx ]]; then
+        echo "Valid Email-ID"
+else
+        echo "Wrong Email Id !!!"
+fi
+
 
 #Checking Password is Valid or Not
 count=`echo ${#pass}`
